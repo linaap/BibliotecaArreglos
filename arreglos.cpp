@@ -2,6 +2,8 @@
 #include <stdio.h> //para usar printf e imprimir internamente
 #include <stdlib.h> //para usar malloc
 
+//cambio externo o remoto
+
 int sumaArreglo(int arr[], int n){ //creamos funcion para sumar
 	int suma = 0;
 	for (int i = 0; i < n; i++){
@@ -12,7 +14,7 @@ int sumaArreglo(int arr[], int n){ //creamos funcion para sumar
 
 int maximo(int arr[], int n){
 	int max = arr[0]; //se iguala al primer elemento del arreglo
-	for(int i = 1; i< n; i++){ //empieza en 1 porque se asume que el valor de la posiciÛn 0 ya esl el m·ximo
+	for(int i = 1; i< n; i++){ //empieza en 1 porque se asume que el valor de la posici√≥n 0 ya esl el m√°ximo
 		if(arr[i] > max){
 			max = arr[i];
 		}
@@ -20,12 +22,12 @@ int maximo(int arr[], int n){
 			printf("Maximo: %d\n", max);
 		#endif
 	}
-	return max; //se retorna el valor maximo, en otros casos se retorna la posiciÛn
+	return max; //se retorna el valor maximo, en otros casos se retorna la posici√≥n
 }
 
 int minimo(int arr[], int n){
 	int min = arr[0]; //se iguala al primer elemento del arreglo
-	for(int i = 1; i< n; i++){ //empieza en 1 porque se asume que el valor de la posiciÛn 0 ya esl el m·ximo
+	for(int i = 1; i< n; i++){ //empieza en 1 porque se asume que el valor de la posici√≥n 0 ya esl el m√°ximo
 		if(arr[i] < min){
 			min = arr[i];
 		}
@@ -63,7 +65,7 @@ int busquedaBinariaIterativa(int arr[], int n, int objetivo){
 	
 	while(inicio <= fin){ //divide hasta obtener la respuesta
 		mit = (inicio + fin) /2;
-		if(arr[mit] == objetivo) return mit; //si lo que buscamos est· en la mitad, se retorna ese valor
+		if(arr[mit] == objetivo) return mit; //si lo que buscamos est√° en la mitad, se retorna ese valor
 		if(arr[mit] < objetivo) inicio = mit + 1;
 		else fin = mit - 1;
 		
@@ -72,7 +74,7 @@ int busquedaBinariaIterativa(int arr[], int n, int objetivo){
 }
 
 //busqueda binaria recursiva
-int busquedaBinariaRecursiva(int arr[], int n, int objetivo, int inicio, int fin){ //inicio y fin me ayuda si quiero buscar en una parte especÌfica
+int busquedaBinariaRecursiva(int arr[], int n, int objetivo, int inicio, int fin){ //inicio y fin me ayuda si quiero buscar en una parte espec√≠fica
 	
 	if(inicio > fin) return -1;
 	
@@ -99,7 +101,7 @@ void bubbleSort(int arr[], int n){ //los arreglos se pasan por referencia
 	//no retorna nada
 }
 
-//ordenamiento selecciÛn
+//ordenamiento selecci√≥n
 void selectionSort(int arr[], int n){
 	int min, minIdx;
 	for(int i = 0; i<n-1; i++){
@@ -116,14 +118,14 @@ void selectionSort(int arr[], int n){
 	}
 }
 
-//ordenamiento por inserciÛn
+//ordenamiento por inserci√≥n
 void insertionSort(int arr[], int n){
 	int aux; //antes de empezar el bucle se guarda el numero en el auxiliar
 	for(int i = 1; i < n; i++){
 		int j = i-1;
 		aux = arr[i];
 		while(arr[j] > aux && j != -1){//el elemento en j sea mas grande que el del i, se repite el bucle, se usa auxiliar porque i cambia, condiciones de parada
-		arr[j+1] = arr[j--]; // se est· perdiendo la referencia, se debe guardar el n˙mero, j-- -> post decremento
+		arr[j+1] = arr[j--]; // se est√° perdiendo la referencia, se debe guardar el n√∫mero, j-- -> post decremento
 		imprimirArreglo(arr, n); //para ver como se desplazan los elementos y como funciona el algoritmo
 		// j--;
 		}
@@ -139,7 +141,7 @@ void merge(int arr[], int inicio, int mit, int fin){
 	int n1 = mit - inicio + 1;
 	int n2 = fin - mit;
 	
-	//se crea arreglo din·mico
+	//se crea arreglo din√°mico
 	int *arrIzq = (int*) malloc(n1*sizeof(int)); //cantidad de elementos del arreglo en bytes, malloc retorna void(generico), se transforma a puntero de enteros con (int*)
 	int *arrDer = (int*) malloc(n2*sizeof(int));
 	//usamos for porque sabemos cuantas veces se va a repetir
@@ -151,7 +153,7 @@ void merge(int arr[], int inicio, int mit, int fin){
 		arrDer[i] = arr[mit + i +1]; //se suma desde el inicio, son posiciones absolutas
 	}
 	
-	i = 0; //inicio i, porque lo usÈ para mi bucle arriba
+	i = 0; //inicio i, porque lo us√© para mi bucle arriba
 	
 	while(i < n1 && j < n2){
 		if(arrIzq[i] <= arrDer[j]){ //i para elementos izquierda, j para elementos derecha, k para los elementos del arreglo original
@@ -161,16 +163,16 @@ void merge(int arr[], int inicio, int mit, int fin){
 			arr[k] = arrDer[j];
 			j++;
 		}
-		k++;  // se cumpla o no la condiciÛn, incrementa k
+		k++;  // se cumpla o no la condici√≥n, incrementa k
 	}
 	
-	while(i < n1){ //si i aun no recorriÛ todos los elementos de la izquierda
+	while(i < n1){ //si i aun no recorri√≥ todos los elementos de la izquierda
 		arr[k++] = arrIzq[i++]; //incrementa, post incremento.
 	}
 	while(j < n2){
 		arr[k++] = arrDer[j++];
 	}
-	// al usar arreglos din·micos, al final se libera la memoria
+	// al usar arreglos din√°micos, al final se libera la memoria
 	free(arrIzq);
 	free(arrDer);
 }
@@ -194,16 +196,16 @@ void intercambiar(int &a, int &b){ //paso por referencia
 	b = aux;
 }
 
-int particionar(int arr[], int inicio, int fin){ //retorna la posiciÛn del pivote
-	int pivote = arr[fin]; //el pivote es el elemento que est· al final
+int particionar(int arr[], int inicio, int fin){ //retorna la posici√≥n del pivote
+	int pivote = arr[fin]; //el pivote es el elemento que est√° al final
 	int i = inicio - 1; //elemento anterior
 	
-	for(int j = inicio; j < fin; j++){ //fin es la posiciÛn del pivote, recorrer los elementos hasta llegar al pivote
+	for(int j = inicio; j < fin; j++){ //fin es la posici√≥n del pivote, recorrer los elementos hasta llegar al pivote
 		if(arr[j] <= pivote) intercambiar(arr[++i], arr[j]); //preincremento, antes de i, se intercambia el elemento en i con el elemento en j
 	}
 	intercambiar(arr[++i], arr[fin]);
 	imprimirArreglo(arr, fin - inicio + 1);
-	return i; //posiciÛn donde quedÛ el pivote
+	return i; //posici√≥n donde qued√≥ el pivote
 }
 
 void quickSort(int arr[], int inicio, int fin){
