@@ -3,6 +3,7 @@
 #include <stdlib.h> //para usar malloc
 
 //cambio externo o remoto
+//cambio interno
 
 int sumaArreglo(int arr[], int n){ //creamos funcion para sumar
 	int suma = 0;
