@@ -10,6 +10,7 @@
 
 int sumaArreglo(int arr[], int n); // se declara la función para usar luego
 int maximo(int arr[], int n);
+int minimo(int arr[], int n); //añadido
 void cuadradoArreglo(int arr[], int n);
 void imprimirArreglo(int arr[], int n);
 int busquedaLineal(int arr[], int n, int objetivo);

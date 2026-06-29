@@ -23,6 +23,19 @@ int maximo(int arr[], int n){
 	return max; //se retorna el valor maximo, en otros casos se retorna la posición
 }
 
+int minimo(int arr[], int n){
+	int min = arr[0]; //se iguala al primer elemento del arreglo
+	for(int i = 1; i< n; i++){ //empieza en 1 porque se asume que el valor de la posición 0 ya esl el máximo
+		if(arr[i] < min){
+			min = arr[i];
+		}
+		#ifdef DEBUG
+			printf("Minimo: %d\n", min);
+		#endif
+	}
+	return min; //se retorna el valor minimo
+}
+
 void cuadradoArreglo(int arr[], int n){ //no retorna nada
 	for(int i=0; i < n; i++){
 		arr[i] = CUADRADO(arr[i]);
