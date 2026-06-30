@@ -5,6 +5,8 @@
 //cambio externo o remoto
 //cambio interno
 
+//comentario lina 
+
 int sumaArreglo(int arr[], int n){ //creamos funcion para sumar
 	int suma = 0;
 	for (int i = 0; i < n; i++){
