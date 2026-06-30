@@ -6,6 +6,7 @@
 //cambio interno
 
 //comentario lina 
+//comentario 2
 
 int sumaArreglo(int arr[], int n){ //creamos funcion para sumar
 	int suma = 0;
